@@ -1,0 +1,18 @@
+{
+  "name": "merge_group_test",
+  "description": "WIP - nothing to see here",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "@voxpelli/tsconfig": "^15.1.2",
+    "@types/node": "^24.0.3",
+    "typescript": "~5.8.2"
+  },
+  "type": "module",
+  "module": "index.js",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "node --experimental-strip-types --test --test-reporter spec && tsc"
+  }
+}

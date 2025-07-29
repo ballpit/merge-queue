@@ -1,0 +1,27 @@
+name: tests
+
+on: [pull_request, push, merge_group]
+
+env:
+  FORCE_COLOR: 1
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        node: ['24']
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node }}
+    - run: npm i
+    - name: Simulate work (1 min wait)
+      run: sleep 60
+    - run: npm test --color=always
