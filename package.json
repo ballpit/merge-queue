@@ -14,5 +14,8 @@
   "types": "index.d.ts",
   "scripts": {
     "test": "node --experimental-strip-types --test --test-reporter spec && tsc"
+  },
+  "dependencies": {
+    "ms": "^2.1.3"
   }
 }
